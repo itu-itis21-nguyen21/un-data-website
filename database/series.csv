@@ -1,0 +1,21 @@
+SeriesID,Series,Unit
+1,Emissions,thousand metric tons of CO2
+2,Emissions per capita,metric tons of CO2
+3,Net official development assistance received: Bilateral,millions of US dollars
+4,Net official development assistance received: Multilateral,millions of US dollars
+5,Net official development assistance received: Total,millions of US dollars
+6,Net official development assistance received: Total,as % GNI
+7,Exchange rates: end of period,national currency per US dollar
+8,Exchange rates: period average,national currency per US dollar
+9,Current health expenditure,% of GDP
+10,Domestic general government health expenditure,% of total government expenditure
+11,Imports CIF,millions of US dollars
+12,Exports FOB,millions of US dollars
+13,Balance imports/exports,millions of US dollars
+14,Percentage of individuals using the internet,% of population
+15,Threatened Species: Vertebrates,number
+16,Threatened Species: Invertebrates,number
+17,Threatened Species: Plants,number
+18,Threatened Species: Total,number
+19,Tourist/visitor arrivals,thousands
+20,Tourism expenditure,millions of US dollars

@@ -1,0 +1,139 @@
+/* Global Styles */
+body {
+    font-family: Verdana, sans-serif;
+    margin: 20px;
+    background-image: url('/static/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    text-align: center;
+}
+
+/* Title Styles */
+h1 {
+    font-size: 2.2em;
+    color: #2b2ba1;
+    margin-bottom: 15px;
+}
+
+/* Form Styles */
+form {
+    margin: 20px auto;
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 12px;
+    box-shadow: none;
+    width: 70%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+form label {
+    font-size: 14px;
+    color: #2b2ba1;
+    white-space: nowrap;
+    text-align: center;
+}
+
+form input, form select {
+    padding: 8px;
+    margin-bottom: 8px;
+    flex: none;
+    width: 80%;
+    min-width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Button Styles */
+button {
+    background-color: transparent;
+    border: none;
+    padding: 6px 2px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 5px 2px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effects */
+button:hover {
+    background-color: #3f4d63;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Add Record Button */
+button[type="submit"] {
+    background-color: #FFD700;
+    color: black;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 6px 12px;
+}
+
+button[type="submit"]:hover {
+    background-color: #FFC300;
+}
+
+/* Link Styles */
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #2b2ba1;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #3f4d63;
+}
+
+/* Autocomplete Input Style */
+#country_name {
+    width: 80%;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        margin: 10px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    form {
+        padding: 15px;
+        width: 90%;
+    }
+    form input, form select {
+        padding: 6px;
+        font-size: 12px;
+        width: 100%;
+    }
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    a {
+        font-size: 14px;
+    }
+}

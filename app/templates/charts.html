@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>2020 Wrapped</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href={{ url_for('static', filename='main2.css') }} />
+		<noscript><link rel="stylesheet" href={{ url_for('static', filename='noscript.css') }} /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h1>UN Wrapped</h1>
+							<p class="major">The World in 2020</p>
+						</div>
+					</section>
+
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>Carbon Dioxide (CO2) Emissions</h1>
+						</div>
+					</section>
+
+					<section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>In 2020, <span class="blue"> {{ emission }}</span> thousand metric tons of carbon dioxide were emitted worldwide.</h1>
+						</div>
+					</section>
+                <!-- Pie chart -->
+                    <section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>Over 50% of CO2 emissions come from Asia.</h1>
+						</div>
+						<div class="image">
+							<img src="data:image/png;base64,{{ plot_pie_url }}" alt="CO2 Emissions Pie Chart" />
+						</div>
+					</section>
+                
+                    <!-- Stacked Area -->
+                    <section class="wrapper style1 align-center">
+                        <div class="inner">
+                            <h1>Most of the rise in CO2 emissions in recent decades can also be attributed to Asia.</h1>
+                            <img src="data:image/png;base64,{{ plot_stack_url }}" alt="CO2 Emissions Stacked Area Chart">
+                        </div>
+                    </section>
+
+                <!-- Circle Packing 1 chart -->
+                    <section class="banner style1 orient-left content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+                        <div class="content">
+                            <h1>China, the US, and India are the three biggest CO2 emitters.</h1>
+                        </div>
+                        <div class="image">
+                            <img src="data:image/png;base64,{{ plot_circle1_url }}" alt="Top 10 Countries CO2 Emissions Circle Packing Chart" />
+                        </div>
+                    </section>
+
+                <!-- Circle Packing 2 chart -->
+                    <section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+                        <div class="content">
+                            <h1>However, the oil-exporting countries emit the most CO2 per capita.</h1>
+                        </div>
+                        <div class="image">
+                            <img src="data:image/png;base64,{{ plot_circle2_url }}" alt="Top 10 Countries CO2 Emissions Per Capita Circle Packing Chart" />
+                        </div>
+                    </section>
+
+				<!-- INTERNET USAGE -->	
+				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+					<div class="content">
+						<h1>Internet Access</h1>
+					</div>
+				</section>
+
+				<section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+					<div class="content">
+						<h1>On average, <span class="blue"> {{ internet }}</span> percent of the population in a country have access to the Internet in 2020.</h1>
+					</div>
+				</section>
+
+				<!-- Bar chart -->
+                    <section class="banner style1 orient-left content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>85% of Europeans have access to the Internet, making Europe the leading region in Internet access.</h1>
+						</div>
+				
+						<img src="data:image/png;base64,{{ plot_internet_bar_url }}" alt="Internet Usage Bar Chart"/>
+					</section>
+
+				<!-- Grouped bar chart -->
+                    <section class="wrapper style1 align-center">
+                        <div class="inner">
+                            <h1>Internet use for the public has grown consistently over the years.</h1>
+                            <img src="data:image/png;base64,{{ plot_internet_grouped_bar_url }}" alt="Internet Usage Grouped Bar Chart">
+                        </div>
+                    </section>
+
+				<!-- Circular bar chart -->
+					<section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>Nevertheless, there is still a wide gap in Internet access among countries.</h1>
+						</div>
+						<div class="image">
+							<img src="data:image/png;base64,{{ plot_internet_circular_bar_url }}" alt="Internet Usage Circular Bar Chart">
+						</div>
+					</section>
+
+				<!-- IMPORTS/EXPORTS/TRADE -->
+				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+					<div class="content">
+						<h1>Imports & Exports</h1>
+					</div>
+				</section>
+
+				<section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+					<div class="content">
+						<h1>The 2020 total trade value reached <span class="blue"> {{ trade }}</span> millions of US dollars.</h1>
+					</div>
+				</section>
+				<!-- 2 pie charts -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h1>Asia and Europe lead the world in terms of total trade value.</h1>
+							<img src="data:image/png;base64,{{ plot_trade_pie_url }}" alt="Trade 2 Pie Chart">
+						</div>
+					</section>
+
+				<!-- Circle chart 1 -->
+					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>The US, China, and Germany are the biggest importers.</h1>
+						</div>
+						<div class="image">
+							<img src="data:image/png;base64,{{ plot_trade_circle1_url }}" alt="Trade Circle Chart 1">
+						</div>
+					</section>
+
+				<!-- Circle chart 2 -->
+					<section class="banner style1 orient-right content-align-left image-position-right fullscreen onscroll-image-fade-in onscroll-content-fade-right">
+						<div class="content">
+							<h1>The three countries are also the biggest exporters.</h1>
+						</div>
+						<div class="image">
+							<img src="data:image/png;base64,{{ plot_trade_circle2_url }}" alt="Trade Circle Chart 2">
+						</div>
+					</section>
+
+				<!-- Horizontal bar chart -->
+					<section class="wrapper style1 align-center">
+						<div class="inner">
+							<h1>In terms of trade balance, China and the US have the highest and lowest balance, respectively.</h1>
+							<img src="data:image/png;base64,{{ plot_trade_barh_url }}" alt="Trade Horizontal Bar Chart">
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer class="wrapper style1 align-center">
+						<div class="inner">
+							<p><a href="/">Main Page</a></p>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src={{ url_for('static', filename='js/jquery.min.js') }}></script>
+			<script src={{ url_for('static', filename='js/jquery.scrollex.min.js') }}></script>
+			<script src={{ url_for('static', filename='js/jquery.scrolly.min.js') }}></script>
+			<script src={{ url_for('static', filename='js/browser.min.js') }}></script>
+			<script src={{ url_for('static', filename='js/breakpoints.min.js') }}></script>
+			<script src={{ url_for('static', filename='js/util.js') }}></script>
+			<script src={{ url_for('static', filename='js/main.js') }}></script>
+
+	</body>
+</html>

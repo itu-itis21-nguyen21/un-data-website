@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block title %}Tourism{% endblock %}
+
+{% block page_title %}TOURISM RECORDS{% endblock %}
+
+{% block add_button_url %}/tourism/add{% endblock %}
+
+{% block content %}
+    <!-- Filtering -->
+    <form method="GET" action="/tourism/search">
+        <label for="country_name">Search by Country: </label>
+        <input type="text" name="country_name" id="country_name" placeholder="Enter country name">
+
+        <label for="series_name">Search by Series: </label>
+        <select name="series_name" id="series_name">
+            <option value="">-- Select Series --</option>
+            <option value="Tourism expenditure">Tourism expenditure</option>
+            <option value="Tourist/visitor arrivals">Tourist/visitor arrivals</option>
+        </select>
+
+        <button type="submit" class="search">Search</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Country Name</th>
+            <th>Series</th>
+            <th>Value</th>
+            <th>Unit</th>
+            <th>Record Year</th>
+            <th>Source</th>
+            {% if is_admin %}
+            <th>Actions</th>
+            {% endif %}
+        </tr>
+        {% for detail in details %}
+        <tr>
+            <td>{{ detail.id }}</td>
+            <td>{{ detail.country_name }}</td>
+            <td>{{ detail.series }}</td>
+            <td>{{ detail.value }}</td>
+            <td>{{ detail.unit }}</td>
+            <td>{{ detail.record_year }}</td>
+            <td>{{ detail.source }}</td>
+
+            {% if is_admin %}
+            <td class="actions">
+                <!-- Edit Button -->
+                <button class="edit" onclick="window.location.href='/tourism/edit/{{ detail.id }}'">Edit</button>
+
+                <!-- Delete Button -->
+                <form action="/tourism/delete/{{ detail.id }}" method="POST" style="display:inline;">
+                    <button type="submit" class="delete">Delete</button>
+                </form>
+            </td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block pagination %}
+    <div class="pagination">
+        <!-- Previous Button -->
+        <form method="GET" action="/tourism">
+            <input type="hidden" name="page" value="{{ current_page - 1 if current_page > 1 else 1 }}">
+            <button type="submit">Previous Page</button>
+        </form>
+
+        <!-- Next Button -->
+        <form method="GET" action="/tourism">
+            <input type="hidden" name="page" value="{{ current_page + 1 }}">
+            <button type="submit">Next Page</button>
+        </form>
+    </div>
+{% endblock %}

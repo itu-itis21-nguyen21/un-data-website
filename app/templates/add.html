@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Record</title>
+    <!-- Include jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+</head>
+<body>
+    <h1>Add Record</h1>
+    <form method="POST">
+        <!-- Autocomplete Field for Country Name -->
+        <label for="country_name">Country Name:</label>
+        <input type="text" id="country_name" name="country_name" placeholder="Start typing a country..." required>
+
+        <!-- Other Form Fields -->
+
+        <!-- Dropdown for Series -->
+        <label for="series">Series:</label>
+        <select id="series" name="series" required>
+            <option value="">Select a series...</option>
+            {% for s in series %}
+                <option value="{{ s }}">{{ s }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="value">Value:</label>
+        <input type="text" id="value" name="value" required>
+
+        <label for="record_year">Record Year:</label>
+        <input type="number" id="record_year" name="record_year" min="1900" max="2100" required>
+
+        <!-- Dropdown for Source -->
+        <label for="source">Source:</label>
+        <select id="source" name="source" required>
+            <option value="">Select a source...</option>
+            {% for src in sources %}
+                <option value="{{ src }}">{{ src }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Add Record</button>
+    </form>
+    <button type="button" onclick="window.location.href='{{ referrer }}'">Cancel</button>
+
+    <script>
+        // Define the list of available countries (provided dynamically by the server)
+        var availableCountries = [
+            {% for country in countries %}
+                "{{ country }}",
+            {% endfor %}
+        ];
+
+        // Initialize the autocomplete functionality
+        $(document).ready(function() {
+            $("#country_name").autocomplete({
+                source: availableCountries,
+                minLength: 2, // Start suggesting after 2 characters
+            });
+        });
+    </script>
+</body>
+</html>
