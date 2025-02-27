@@ -5,3 +5,11 @@ This website is the result of the term project in our Database Systems course. W
 **Stack**: HTML, CSS, JavaScript, Flask, MySQL
 
 ![Main page](/images/main.png)
+
+![Page](/images/page.png)
+
+![Stat1 page](/images/stat1.png)
+
+![Stat2 page](/images/stat2.png)
+
+![Stat3 page](/images/stat3.png)
